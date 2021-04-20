@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Room</string>
+    <string name="show_users">Show users</string>
+    <string name="insert_user">Insert user</string>
+    <string name="delete_users">Delete users</string>
+    <string name="delete_user_by_name">Delete User By Name</string>
+    <string name="teste">teste123</string>
+    <string name="pedro123">pedro123</string>
+    <string name="pedro">Pedro</string>
+    <string name="update">Update</string>
+</resources>

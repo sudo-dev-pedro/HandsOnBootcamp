@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Animations</string>
+    <string name="acelerate_and_decelerate">Acelerate and Decelerate</string>
+    <string name="acelerate">Acelerate</string>
+    <string name="decelerate_and_change_color_when_animation_start">Decelerate and change color when animation start</string>
+    <string name="repeat_with_reverse">Repeat with reverse</string>
+    <string name="rotation_text_view">Rotation Text View</string>
+    <string name="rotate_360">Rotate 360</string>
+    <string name="container_with_translation_y">Container with Translation Y</string>
+    <string name="start_animations">Start animations</string>
+</resources>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <TextView
+        android:id="@+id/text_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/book_text_margin_start"
+        android:layout_marginTop="@dimen/book_text_margin_top"
+        android:layout_marginEnd="@dimen/book_text_margin_end"
+        android:fontFamily="@font/montserrat_bold"
+        android:lineSpacingExtra="16dp"
+        android:text="@string/book"
+        android:textColor="@color/black_font_color"
+        android:textSize="@dimen/book_font_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fromLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="@string/from_hint"
+        app:layout_constraintTop_toBottomOf="@+id/text_home">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fromInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/book_text_margin_start"
+            android:layout_marginTop="@dimen/inputs_margin_top"
+            android:layout_marginEnd="@dimen/book_text_margin_end"
+            android:background="@color/white"
+            android:fontFamily="@font/montserrat_regular"
+            android:inputType="text"
+            android:textSize="@dimen/inputs_font_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_home" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/toLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="@string/to_hint"
+        app:layout_constraintTop_toBottomOf="@+id/fromLabel">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/toInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/book_text_margin_start"
+            android:layout_marginTop="@dimen/inputs_margin_top"
+            android:layout_marginEnd="@dimen/book_text_margin_end"
+            android:background="@color/white"
+            android:fontFamily="@font/montserrat_regular"
+            android:inputType="text"
+            android:textSize="@dimen/inputs_font_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_home" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/departLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="@string/depart_hint"
+        app:layout_constraintTop_toBottomOf="@+id/toLabel">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/departInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/book_text_margin_start"
+            android:layout_marginTop="@dimen/inputs_margin_top"
+            android:layout_marginEnd="@dimen/book_text_margin_end"
+            android:background="@color/white"
+            android:fontFamily="@font/montserrat_regular"
+            android:inputType="date"
+            android:textSize="@dimen/inputs_font_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_home" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/btn_margin_start"
+        android:layout_marginTop="@dimen/btn_margin_top"
+        android:layout_marginEnd="@dimen/btn_margin_end"
+        android:text="@string/search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/departLabel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

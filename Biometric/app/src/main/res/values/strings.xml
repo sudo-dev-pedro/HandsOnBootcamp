@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Biometric</string>
+    <string name="authenticate_with_biometric">Authenticate with biometric</string>
+    <string name="welcome_to_the_21st_century">Welcome to the 21st century!</string>
+</resources>

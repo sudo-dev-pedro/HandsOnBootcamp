@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SemaphoreActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCircleGo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/grey_circle"
+        app:layout_constraintBottom_toTopOf="@+id/ivCircleYellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtGo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="Vai!"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/ivCircleGo"
+        app:layout_constraintStart_toStartOf="@+id/ivCircleGo"
+        app:layout_constraintTop_toBottomOf="@+id/ivCircleGo" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCircleYellow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/grey_circle"
+        app:layout_constraintBottom_toTopOf="@+id/ivCircleRed"
+        app:layout_constraintEnd_toEndOf="@id/ivCircleGo"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/ivCircleGo"
+        app:layout_constraintTop_toBottomOf="@+id/ivCircleGo" />
+
+    <TextView
+        android:id="@+id/txtAtencao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="Atenção!"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/ivCircleYellow"
+        app:layout_constraintStart_toStartOf="@+id/ivCircleYellow"
+        app:layout_constraintTop_toBottomOf="@+id/ivCircleYellow" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCircleRed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/grey_circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/ivCircleYellow"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/ivCircleYellow"
+        app:layout_constraintTop_toBottomOf="@+id/ivCircleYellow" />
+
+    <TextView
+        android:id="@+id/txtPare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="Pare!"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/ivCircleRed"
+        app:layout_constraintStart_toStartOf="@+id/ivCircleRed"
+        app:layout_constraintTop_toBottomOf="@+id/ivCircleRed" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

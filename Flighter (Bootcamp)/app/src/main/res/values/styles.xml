@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="from_to_initials_style" parent="Theme.Flighter">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/from_to_initials_search_margin_top</item>
+        <item name="android:textSize">@dimen/from_to_initials_search_font_size</item>
+        <item name="android:textColor">@color/black_font_color</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="from_to_city_name_style" parent="Theme.Flighter">
+        <item name="android:fontFamily">@font/montserrat_light</item>
+        <item name="android:textColor">@color/black_font_color</item>
+        <item name="android:textSize">@dimen/from_to_city_name_search_font_size</item>
+    </style>
+
+    <style name="flight_price_style" parent="Theme.Flighter">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/orange_font_color</item>
+        <item name="android:textSize">@dimen/flight_price_font_size</item>
+    </style>
+</resources>

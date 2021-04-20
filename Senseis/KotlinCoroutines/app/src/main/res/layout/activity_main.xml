@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button_start_big_calc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BigCalcActivity"/>
+
+    <Button
+        android:id="@+id/button_start_counter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CounterActivity"/>
+
+    <Button
+        android:id="@+id/button_start_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SearchActivity"/>
+
+</LinearLayout>

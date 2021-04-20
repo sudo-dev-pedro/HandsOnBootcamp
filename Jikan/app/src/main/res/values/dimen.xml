@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="anime_image_height">192dp</dimen>
+    <dimen name="name_margin_top">32dp</dimen>
+
+    <dimen name="guideline_begin">32dp</dimen>
+
+    <dimen name="name_text_size">24sp</dimen>
+
+    <dimen name="anime_infos_margin_top">16dp</dimen>
+</resources>

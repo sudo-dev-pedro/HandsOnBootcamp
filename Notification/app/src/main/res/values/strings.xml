@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Notification</string>
+    <string name="title_text_and_action_intent">Title, Text and Action Intent</string>
+    <string name="title_text_and_intent">Title, Text and Intent</string>
+    <string name="title_text_and_custom_sound_vibration">Title, Text and Custom Sound/Vibration</string>
+    <string name="title_text_and_expandable_large_icon">Title, Text and Expandable Large Icon</string>
+    <string name="title_text_and_large_icon">Title, Text and Large Icon</string>
+    <string name="title_and_text">Title and Text</string>
+</resources>

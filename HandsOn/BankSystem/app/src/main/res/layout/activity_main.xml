@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".features.MainActivity">
+
+
+    <TextView
+        android:id="@+id/transferName_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Type the CPF of the account you want to do the transaction:"
+        app:layout_constraintBottom_toBottomOf="@+id/cpf_inputText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/cpf_inputText"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/transferName_textView"
+        tools:text="" />
+
+    <Button
+        android:id="@+id/withdraw_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:onClick="withdraw"
+        android:text="@string/withdraw_text"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cpf_inputText" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/withdrawValue_inputText"
+        android:layout_width="129dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="16dp"
+        android:singleLine="true"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/withdraw_button"
+        app:layout_constraintRight_toLeftOf="@id/withdraw_button"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/withdraw_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/withdraw_value"
+        app:layout_constraintRight_toLeftOf="@id/withdrawValue_inputText"
+        app:layout_constraintTop_toBottomOf="@id/cpf_inputText" />
+
+    <Button
+        android:id="@+id/transfer_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="transfer"
+        android:text="@string/transfer"
+        app:layout_constraintBottom_toBottomOf="@id/transferValue_inputText"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/checkBalance_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:onClick="balance"
+        android:text="@string/check_balance"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/transfer_button" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/transferTo_inputText"
+        android:layout_width="127dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="20dp"
+        android:singleLine="true"
+        android:textSize="16sp"
+        app:layout_constraintRight_toLeftOf="@id/transfer_button"
+        app:layout_constraintTop_toBottomOf="@id/withdrawValue_inputText"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/transferTo_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/transfer_to_cpf"
+        app:layout_constraintBottom_toBottomOf="@id/transferTo_inputText"
+        app:layout_constraintLeft_toLeftOf="@id/withdraw_textView" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/transferValue_inputText"
+        android:layout_width="127dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:singleLine="true"
+        android:textSize="16sp"
+        app:layout_constraintRight_toLeftOf="@id/transfer_button"
+        app:layout_constraintTop_toBottomOf="@id/transferTo_inputText"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/transferValue_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/transfer_amount"
+        app:layout_constraintBottom_toBottomOf="@id/transferValue_inputText"
+        app:layout_constraintLeft_toLeftOf="@id/withdraw_textView" />
+
+    <TextView
+        android:id="@+id/result_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/transfer_button" />
+
+    <TextView
+        android:id="@+id/accountBalance_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/result_textview" />
+
+    <Button
+        android:id="@+id/clear_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clear"
+        android:onClick="clear"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

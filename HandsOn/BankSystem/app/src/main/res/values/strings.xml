@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">BankSystem</string>
+
+    <string name="no_account_found">No account found!</string>
+    <string name="destination_account_not_found">Destination account not found</string>
+    <string name="insufficient_balance">Insufficient balance for this operation!</string>
+    <string name="system_idle">System is idle!</string>
+    <string name="current_balance">Current balance: %f</string>
+    <string name="withdraw_text">Withdraw</string>
+    <string name="type_the_cpf">Type the CPF of the account you want to do the transaction:</string>
+    <string name="withdraw_value">Withdraw value:</string>
+    <string name="transfer">Transfer</string>
+    <string name="transfer_to_cpf">Transfer to (CPF): </string>
+    <string name="transfer_amount">Transfer amount: </string>
+    <string name="transfered_amount">Transferred amount: %1s to: %2s </string>
+    <string name="clear">Clear</string>
+    <string name="check_balance">Check Balance</string>
+
+</resources>

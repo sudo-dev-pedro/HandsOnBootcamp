@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/fromInitialsResult"
+            style="@style/from_to_initials_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/airplaneIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="XXX" />
+
+        <TextView
+            android:id="@+id/departTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_light"
+            android:textColor="@color/black_font_color"
+            android:textSize="@dimen/arrive_depart_hour"
+            app:layout_constraintStart_toStartOf="@id/fromInitialsResult"
+            app:layout_constraintTop_toBottomOf="@id/fromInitialsResult"
+            tools:text="08:05" />
+
+        <ImageView
+            android:id="@+id/airplaneIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/fromInitialsResult"
+            app:layout_constraintEnd_toStartOf="@+id/toInitialsResult"
+            app:layout_constraintStart_toEndOf="@+id/fromInitialsResult"
+            app:layout_constraintTop_toTopOf="@+id/fromInitialsResult"
+            tools:ignore="contentDescription"
+            tools:src="@drawable/ic_dashboard_black_24dp" />
+
+        <TextView
+            android:id="@+id/toInitialsResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black_font_color"
+            android:textSize="@dimen/from_to_initials"
+            app:layout_constraintBottom_toBottomOf="@id/fromInitialsResult"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/airplaneIcon"
+            app:layout_constraintTop_toTopOf="@+id/fromInitialsResult"
+            tools:text="ZZZ" />
+
+        <TextView
+            android:id="@+id/arriveTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_light"
+            android:textColor="@color/black_font_color"
+            android:textSize="@dimen/arrive_depart_hour"
+            app:layout_constraintEnd_toEndOf="@id/toInitialsResult"
+            app:layout_constraintTop_toBottomOf="@id/toInitialsResult"
+            tools:text="08:05 AM" />
+
+        <TextView
+            android:id="@+id/airlineName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/black_font_color"
+            app:layout_constraintStart_toStartOf="@id/fromInitialsResult"
+            app:layout_constraintTop_toBottomOf="@id/departTime"
+            tools:text="AIRLINE" />
+
+        <TextView
+            android:id="@+id/estimatedFlightTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_font_color"
+            app:layout_constraintBottom_toBottomOf="@id/airlineName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/airlineName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/airlineName"
+            tools:text="2 h 15 min" />
+
+        <TextView
+            android:id="@+id/flightPrice"
+            style="@style/flight_price_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/estimatedFlightTime"
+            app:layout_constraintEnd_toEndOf="@id/toInitialsResult"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/estimatedFlightTime"
+            app:layout_constraintTop_toTopOf="@id/estimatedFlightTime"
+            tools:text="PRICE" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

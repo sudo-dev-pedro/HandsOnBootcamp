@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="guidelines_margin">16dp</dimen>
+
+    <!-- BUTTONS MARGIN TOP -->
+    <dimen name="btn_margin_top">16dp</dimen>
+
+    <!-- PROGRESS BAR -->
+    <dimen name="progress_bar_margin_top">32dp</dimen>
+
+    <!-- MOVIE TEXT -->
+    <dimen name="title_movie">24sp</dimen>
+    <dimen name="description_movie">16sp</dimen>
+</resources>

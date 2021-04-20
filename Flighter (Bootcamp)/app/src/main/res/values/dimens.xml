@@ -1,0 +1,59 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Login Views Size -->
+    <dimen name="btn_margin_start">40dp</dimen>
+    <dimen name="btn_margin_end">40dp</dimen>
+    <dimen name="btn_margin_top">40dp</dimen>
+    <dimen name="login_inputs_margin_top">16dp</dimen>
+    <dimen name="register_margin_top">24dp</dimen>
+    <dimen name="app_name_margin_top">120dp</dimen>
+
+    <!-- Login Text Size -->
+    <dimen name="register_font_size">16sp</dimen>
+
+    <!-- Home Views Size -->
+    <dimen name="book_text_margin_top">56dp</dimen>
+    <dimen name="book_text_margin_start">40dp</dimen>
+    <dimen name="book_text_margin_end">40dp</dimen>
+    <dimen name="inputs_margin_top">32dp</dimen>
+
+    <!-- Home Text Size -->
+    <dimen name="book_font_size">24sp</dimen>
+    <dimen name="inputs_font_size">18sp</dimen>
+
+    <!-- Item Boarding Pass Font Size -->
+    <dimen name="arrive_depart_hour">16sp</dimen>
+    <dimen name="from_to_initials">32sp</dimen>
+
+    <!-- Boarding Pass Detail Views Size -->
+    <dimen name="smart_pass_title_margin_top">40dp</dimen>
+    <dimen name="to_city_margin_top">24dp</dimen>
+    <dimen name="from_initials_margin_top">24dp</dimen>
+    <dimen name="from_initials_margin_start">40dp</dimen>
+    <dimen name="book_id_margin_top">48dp</dimen>
+    <dimen name="code_bar_margin_top">56dp</dimen>
+    <dimen name="flight_code_content_margin_bottom">24dp</dimen>
+    <dimen name="linear_layout_columns_margin_top">48dp</dimen>
+    <dimen name="airline_name_margin_top">24dp</dimen>
+
+    <!-- Boarding Pass Detail Font Size -->
+    <dimen name="from_to_font_size">32sp</dimen>
+
+    <!-- Search Views Size -->
+    <dimen name="from_to_initials_search_margin_top">40dp</dimen>
+    <dimen name="from_initials_search_margin_start">48dp</dimen>
+    <dimen name="to_initials_search_margin_end">48dp</dimen>
+
+    <!-- Search Font Size -->
+    <dimen name="from_to_initials_search_font_size">32sp</dimen>
+    <dimen name="from_to_city_name_search_font_size">14sp</dimen>
+    <dimen name="flight_price_font_size">24sp</dimen>
+
+    <!-- Flight Details Views Size -->
+    <dimen name="flight_price_title_margin_top">40dp</dimen>
+    <dimen name="btn_confirm_booking_margin">48dp</dimen>
+
+</resources>

@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Flighter</string>
+    <string name="title_home">Home</string>
+
+    <!-- LOGIN ACTIVITY -->
+    <string name="btn_login">Login</string>
+    <string name="email_hint">Email</string>
+    <string name="birth_date_hint">Birth date</string>
+    <string name="password_hint">Password</string>
+    <string name="register">Register</string>
+
+    <!-- REGISTER ACTIVITY HINTS -->
+    <string name="cpf_hint">cpf</string>
+    <string name="first_name_hint">First name</string>
+    <string name="last_name_hint">Last name</string>
+    <string name="passport_hint">Passport (optional)</string>
+
+    <!-- HOME FRAGMENT STRINGS -->
+    <string name="book">Book your flight</string>
+    <string name="search">Search</string>
+
+    <!-- HOME FRAGMENT HINTS -->
+    <string name="from_hint">from</string>
+    <string name="to_hint">to</string>
+    <string name="depart_hint">depart</string>
+
+    <!-- BOARDING PASS -->
+    <string name="title_boarding">Upcoming flights</string>
+
+    <!-- ITEM BOARDING PASS -->
+    <!-- Essas infos precisam ser preenchidas programaticamente -->
+    <string name="to_text">TO</string>
+
+    <!-- BOARDING PASS DETAIL -->
+    <string name="smart_pass_title">Smart Pass</string>
+
+    <!-- SEARCH FRAGMENT -->
+    <!-- Essas infos precisam ser preenchidas com o que vier da Home Fragment -->
+
+    <!-- FLIGHT DETAILS FRAGMENT -->
+    <string name="flight_details_title">Flight Details</string>
+    <string name="btn_confirm_booking">Confirm booking</string>
+
+</resources>

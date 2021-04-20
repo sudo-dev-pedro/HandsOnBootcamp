@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.LoginActivity">
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_name_margin_top"
+        android:fontFamily="@font/montserrat_bold"
+        android:lineSpacingExtra="16dp"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/black_font_color"
+        android:textSize="@dimen/book_font_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/emailInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/book_text_margin_start"
+        android:layout_marginTop="@dimen/inputs_margin_top"
+        android:layout_marginEnd="@dimen/book_text_margin_end"
+        android:background="@color/white"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/email_hint"
+        android:inputType="textEmailAddress"
+        android:textSize="@dimen/inputs_font_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appName" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/passwordInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/book_text_margin_start"
+        android:layout_marginTop="@dimen/login_inputs_margin_top"
+        android:layout_marginEnd="@dimen/book_text_margin_end"
+        android:background="@color/white"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="@string/password_hint"
+        android:inputType="textPassword"
+        android:textSize="@dimen/inputs_font_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailInput" />
+
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/btn_margin_start"
+        android:layout_marginTop="@dimen/btn_margin_top"
+        android:layout_marginEnd="@dimen/btn_margin_end"
+        android:text="@string/btn_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordInput" />
+
+    <TextView
+        android:id="@+id/txtRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/register_margin_top"
+        android:text="@string/register"
+        android:textAlignment="center"
+        android:textSize="@dimen/register_font_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

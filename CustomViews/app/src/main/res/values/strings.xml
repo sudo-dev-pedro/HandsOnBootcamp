@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CustomViews</string>
+    <string name="minus_button">Minus Button</string>
+    <string name="plus_button">Plus Button</string>
+</resources>

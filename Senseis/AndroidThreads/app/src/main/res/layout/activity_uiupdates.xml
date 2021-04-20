@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".UiUpdatesActivity">
+
+
+    <Button
+        android:id="@+id/bBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickBackground"
+        android:text="Try to Update UI from background thread" />
+
+    <Button
+        android:id="@+id/bRunOnUiThread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickRunOnUIThread"
+        android:text="Update the UI using runOnUIThread" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+</LinearLayout>

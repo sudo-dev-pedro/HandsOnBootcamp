@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.flight.FlightDetailsFragment">
+
+    <LinearLayout
+        android:id="@+id/flightDetailsOne"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_font_color"
+        android:orientation="vertical"
+        android:padding="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/airlineName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_font_color"
+            tools:text="CAPITAL AIRLINES" />
+
+        <TextView
+            android:id="@+id/fromInitials"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/from_initials_margin_top"
+            android:fontFamily="@font/montserrat_medium"
+            android:textAlignment="center"
+            android:textColor="@color/black_font_color"
+            android:textSize="@dimen/from_to_font_size"
+            tools:text="CWB" />
+
+        <TextView
+            android:id="@+id/departDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_regular"
+            android:padding="4dp"
+            android:textAlignment="center"
+            android:textColor="@color/black_font_color"
+            tools:text="02/12/2020" />
+
+        <TextView
+            android:id="@+id/departTerminal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_regular"
+            android:padding="4dp"
+            android:textAlignment="center"
+            android:textColor="@color/black_font_color"
+            tools:text="Terminal H" />
+
+        <TextView
+            android:id="@+id/toInitials"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/from_initials_margin_top"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/smart_pass_title"
+            android:textAlignment="center"
+            android:textColor="@color/black_font_color"
+            android:textSize="@dimen/from_to_font_size"
+            tools:text="BSB" />
+
+        <TextView
+            android:id="@+id/arriveDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_regular"
+            android:padding="4dp"
+            android:textAlignment="center"
+            android:textColor="@color/black_font_color"
+            tools:text="02/12/2020" />
+
+        <TextView
+            android:id="@+id/arriveTerminal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_regular"
+            android:padding="4dp"
+            android:textAlignment="center"
+            android:textColor="@color/black_font_color"
+            tools:text="Terminal F" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/flightDetailsColumnOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="@dimen/linear_layout_columns_margin_top"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/flightDetailsOne"
+        app:layout_constraintTop_toTopOf="@id/flightDetailsOne">
+
+        <TextView
+            android:id="@+id/flightCodeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black_font_color"
+            tools:text="Flight" />
+
+        <TextView
+            android:id="@+id/flightCodeContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/flight_code_content_margin_bottom"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black_font_color"
+            tools:text="flight_id" />
+
+        <TextView
+            android:id="@+id/estimatedFlightTimeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black_font_color"
+            tools:text="Estimated Flight Time" />
+
+        <TextView
+            android:id="@+id/passengerNameContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/flight_code_content_margin_bottom"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black_font_color"
+            tools:text="flight_time" />
+
+        <TextView
+            android:id="@+id/airplaneModelNumberTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black_font_color"
+            tools:text="Airplane" />
+
+        <TextView
+            android:id="@+id/airplaneModelNumberContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/flight_code_content_margin_bottom"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black_font_color"
+            tools:text="airplane_model" />
+
+        <TextView
+            android:id="@+id/checkInTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black_font_color"
+            tools:text="Estimated Check In" />
+
+        <TextView
+            android:id="@+id/arriveTerminalContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black_font_color"
+            tools:text="check_in" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/flightPriceTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginTop="@dimen/flight_price_title_margin_top"
+        android:textAlignment="center"
+        android:textColor="@color/black_font_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/flightDetailsOne"
+        tools:text="Total Price" />
+
+    <TextView
+        android:id="@+id/flightPriceContent"
+        style="@style/flight_price_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="@id/flightPriceTitle"
+        app:layout_constraintEnd_toEndOf="@id/flightPriceTitle"
+        app:layout_constraintTop_toBottomOf="@id/flightPriceTitle"
+        tools:text="R$ 350,00" />
+
+    <Button
+        android:id="@+id/btnConfirmBooking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/btn_confirm_booking_margin"
+        app:layout_constraintTop_toBottomOf="@id/flightPriceContent"
+        android:text="@string/btn_confirm_booking" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

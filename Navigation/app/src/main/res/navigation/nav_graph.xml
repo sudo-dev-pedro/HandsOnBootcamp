@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentMain">
+
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="br.com.navigation.MainFragment"
+        android:label="FragmentMain"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentOne"
+            app:destination="@id/fragmentOne" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentOne"
+        android:name="br.com.navigation.FlowFragment"
+        android:label="FragmentOne"
+        tools:layout="@layout/fragment_one">
+
+        <!-- O Nome da action precisa ser o mesmo nas três fragments nesse caso -->
+        <action
+            android:id="@+id/action_next_fragment"
+            app:destination="@id/fragmentTwo" />
+
+        <argument
+            android:name="number"
+            android:defaultValue="1"
+            app:argType="integer" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentTwo"
+        android:name="br.com.navigation.FlowFragment"
+        android:label="FragmentTwo"
+        tools:layout="@layout/fragment_two">
+
+        <action
+            android:id="@+id/action_next_fragment"
+            app:destination="@id/fragmentThree" />
+
+        <argument
+            android:name="number"
+            android:defaultValue="2"
+            app:argType="integer" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentThree"
+        android:name="br.com.navigation.FlowFragment"
+        android:label="FragmentThree"
+        tools:layout="@layout/fragment_three">
+
+        <action
+            android:id="@+id/action_next_fragment"
+            app:destination="@id/fragmentMain" />
+
+        <argument
+            android:name="number"
+            android:defaultValue="3"
+            app:argType="integer" />
+
+    </fragment>
+
+</navigation>

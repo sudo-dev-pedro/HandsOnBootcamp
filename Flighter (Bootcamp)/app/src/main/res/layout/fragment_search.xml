@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.flight.SearchFragment">
+
+    <!-- Back button -->
+
+    <TextView
+        android:id="@+id/fromInitialsSearch"
+        style="@style/from_to_initials_style"
+        android:layout_marginStart="@dimen/from_initials_search_margin_start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="AAA" />
+
+    <TextView
+        android:id="@+id/fromCityNameSearch"
+        style="@style/from_to_city_name_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/fromInitialsSearch"
+        app:layout_constraintTop_toBottomOf="@id/fromInitialsSearch"
+        tools:text="ADEADEA" />
+
+    <TextView
+        android:id="@+id/toInitialsSearch"
+        style="@style/from_to_initials_style"
+        android:layout_marginTop="@dimen/from_to_initials_search_margin_top"
+        android:layout_marginEnd="@dimen/to_initials_search_margin_end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="BBB" />
+
+    <TextView
+        android:id="@+id/toCityNameSearch"
+        style="@style/from_to_city_name_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/toInitialsSearch"
+        app:layout_constraintTop_toBottomOf="@id/toInitialsSearch"
+        tools:text="CHEGADEA" />
+
+    <LinearLayout
+        android:id="@+id/flightDepartDateSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@id/toInitialsSearch"
+        app:layout_constraintStart_toEndOf="@id/fromInitialsSearch"
+        app:layout_constraintTop_toBottomOf="@id/fromCityNameSearch">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="@color/black_font_color"
+            tools:text="02/11/2020" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/flightsResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        app:layout_constraintTop_toBottomOf="@id/flightDepartDateSearch"
+        tools:itemCount="1"
+        tools:layout_editor_absoluteX="0dp"
+        tools:listitem="@layout/item_flight_result" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

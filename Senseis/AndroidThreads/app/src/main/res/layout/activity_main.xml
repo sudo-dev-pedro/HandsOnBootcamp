@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/bUiUpdates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickUiUpdates"
+        android:text="UI Updates" />
+
+    <Button
+        android:id="@+id/bSemaphore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickSemaphore"
+        android:text="Semaphore" />
+
+    <Button
+        android:id="@+id/bHandlerLooper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickHandlerLooper"
+        android:text="Handler/Looper" />
+
+    <Button
+        android:id="@+id/bAsyncTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickAsyncTask"
+        android:text="AsyncTask" />
+</LinearLayout>

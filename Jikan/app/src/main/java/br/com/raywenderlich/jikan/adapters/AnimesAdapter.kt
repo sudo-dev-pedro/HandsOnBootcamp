@@ -8,10 +8,10 @@ import br.com.raywenderlich.jikan.models.Anime
 import br.com.raywenderlich.jikan.viewholder.AnimesViewHolder
 import com.bumptech.glide.Glide
 
-class AnimesAdapter(
-    private val animesList: List<Anime>,
-    private val onClickAction: (anime: Anime) -> Unit
-) : RecyclerView.Adapter<AnimesViewHolder>() {
+class AnimesAdapter : RecyclerView.Adapter<AnimesViewHolder>() {
+
+    private var animesList: List<Anime> = emptyList()
+    private var onClickAction: (anime: Anime) -> Unit = {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimesViewHolder {
         val item = LayoutInflater
@@ -39,6 +39,14 @@ class AnimesAdapter(
                 onClickAction(animesList[position])
             }
         }
+    }
+
+    fun updateAnimesList(newAnimesList: List<Anime>) {
+        animesList = newAnimesList
+    }
+
+    fun onClickItem(anime: (Anime) -> Unit) {
+        onClickAction = anime
     }
 
     override fun getItemCount(): Int = animesList.size

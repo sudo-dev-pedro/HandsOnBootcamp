@@ -8,9 +8,13 @@ import br.com.raywenderlich.jikan.models.CharacterResult
 import br.com.raywenderlich.jikan.viewholder.CharacterViewHolder
 import com.bumptech.glide.Glide
 
-class CharacterAdapter(
-    private val characterList: List<CharacterResult>
-) : RecyclerView.Adapter<CharacterViewHolder>() {
+class CharacterAdapter : RecyclerView.Adapter<CharacterViewHolder>() {
+
+    private var characterList: List<CharacterResult> = emptyList()
+
+    fun updateList(newCharacterList: List<CharacterResult>) {
+        characterList = newCharacterList
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
         val item = LayoutInflater
@@ -35,8 +39,6 @@ class CharacterAdapter(
         }
     }
 
-    override fun getItemCount(): Int {
-        return characterList.size
-    }
+    override fun getItemCount(): Int = characterList.size
 
 }

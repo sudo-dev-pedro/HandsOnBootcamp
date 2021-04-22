@@ -1,7 +1,6 @@
 package br.com.raywenderlich.jikan
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -14,19 +13,21 @@ import br.com.raywenderlich.jikan.handlers.RequestResultSuccess
 import br.com.raywenderlich.jikan.models.Anime
 import br.com.raywenderlich.jikan.models.CharacterResult
 import br.com.raywenderlich.jikan.services.AnimeService
-import br.com.raywenderlich.jikan.services.JikanAPI
 import com.bumptech.glide.Glide
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.koin.android.ext.android.inject
 
 class AnimeDetailActivity : AppCompatActivity() {
 
     private lateinit var animeDetailActivityBinding: ActivityAnimeDetailBinding
     private lateinit var view: View
-    private lateinit var animeService: AnimeService
     private lateinit var characterRecyclerView: RecyclerView
     private lateinit var characterList: MutableList<CharacterResult>
+
+    private val animeService: AnimeService by inject()
+    private val characterAdapter: CharacterAdapter by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,8 +44,6 @@ class AnimeDetailActivity : AppCompatActivity() {
 
         val anime = intent.getSerializableExtra("anime") as Anime
         showAnimeDetails(anime)
-
-        animeService = JikanAPI.jikanAPIConfigCharacter()
 
         dispatcherRequestStaff(anime.id)
 
@@ -88,7 +87,8 @@ class AnimeDetailActivity : AppCompatActivity() {
                     characterList.add(it)
                 }
 
-                initAdapter(characterList)
+                initAdapter()
+                characterAdapter.updateList(characterList)
                 animeDetailActivityBinding.txtCharacterStaff.visibility = View.VISIBLE
             }
 
@@ -124,8 +124,8 @@ class AnimeDetailActivity : AppCompatActivity() {
         animeDetailActivityBinding.txtAiring.text = if (anime.airing) "| Yes" else "| No"
     }
 
-    private fun initAdapter(characterList: List<CharacterResult>) {
-        characterRecyclerView.adapter = CharacterAdapter(characterList)
+    private fun initAdapter() {
+        characterRecyclerView.adapter = characterAdapter
         characterRecyclerView.setHasFixedSize(true)
     }
 

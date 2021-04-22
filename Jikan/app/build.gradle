@@ -40,8 +40,8 @@ android {
 dependencies {
 
     def retrofit_version = "2.9.0"
-    def coroutines_version = "1.4.1"
-    def moshi_version = "1.9.3"
+    def coroutines_version = "1.4.2"
+    def moshi_version = "1.11.0"
     def glide_version = "4.12.0"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -62,6 +62,10 @@ dependencies {
     //Moshi
     implementation "com.squareup.moshi:moshi:$moshi_version"
     kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+
+    // Koin
+    implementation 'org.koin:koin-android:2.2.2'
+    implementation 'org.koin:koin-androidx-scope:2.2.2'
 
     //Glide
     implementation "com.github.bumptech.glide:glide:$glide_version"

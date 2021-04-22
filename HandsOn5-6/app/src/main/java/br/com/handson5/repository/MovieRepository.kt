@@ -2,8 +2,8 @@ package br.com.handson5.repository
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import org.koin.core.KoinComponent
-import org.koin.core.inject
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
 class MovieRepository : MovieDataSource, KoinComponent {
 

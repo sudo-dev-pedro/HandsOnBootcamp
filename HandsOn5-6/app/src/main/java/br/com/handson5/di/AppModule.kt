@@ -21,7 +21,7 @@ val appModule = module {
         Retrofit.Builder()
             .addConverterFactory(
                 MoshiConverterFactory
-                    .create(get<Moshi>(named(MOSHI)))
+                    .create(get(named(MOSHI)))
             )
             .baseUrl(MovieRepository.URL)
             .build()

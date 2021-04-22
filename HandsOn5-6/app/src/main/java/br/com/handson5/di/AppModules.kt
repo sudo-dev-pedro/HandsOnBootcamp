@@ -1,5 +1,8 @@
 package br.com.handson5.di
 
+import br.com.handson5.App.Companion.database
+import br.com.handson5.database.dao.MovieDao
+import br.com.handson5.database.repository.MovieEntityRepository
 import br.com.handson5.repository.MovieApi
 import br.com.handson5.repository.MovieRepository
 import br.com.handson5.ui.main.MainViewModel
@@ -35,6 +38,16 @@ val appModule = module {
     single { MovieRepository() }
 
     viewModel { MainViewModel(moviesRepository = get()) }
+}
+
+val repositoryModule = module {
+    single {
+        database.movieDao()
+    }
+
+    single {
+        MovieEntityRepository(get())
+    }
 }
 
 const val RETROFIT = "Retrofit Dependency"

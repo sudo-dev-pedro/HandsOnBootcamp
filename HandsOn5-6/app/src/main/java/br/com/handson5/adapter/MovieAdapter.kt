@@ -48,7 +48,5 @@ class MovieAdapter(
         notifyDataSetChanged()
     }
 
-    fun getList(): List<Movie> {
-        return moviesList
-    }
+    fun getList(): List<Movie> = moviesList
 }

@@ -12,16 +12,16 @@ import android.view.animation.DecelerateInterpolator
 import android.widget.ImageView
 import android.widget.Toast
 import android.widget.ViewAnimator
-import androidx.lifecycle.ViewModelProvider
 import br.com.handson5.databinding.ActivityMovieDetailBinding
 import com.bumptech.glide.Glide
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import kotlin.properties.Delegates
 
 class MovieDetailActivity : AppCompatActivity() {
 
     private lateinit var detailBinding: ActivityMovieDetailBinding
-    private val movieDetailsViewModel by lazy {
-        ViewModelProvider(this).get(MovieDetailsViewModel::class.java)
-    }
+    private var id: Long = 0
+    private val movieDetailsViewModel: MovieDetailsViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,8 +30,10 @@ class MovieDetailActivity : AppCompatActivity() {
         setContentView(detailBinding.root)
 
         title = intent.getStringExtra(EXTRA_MOVIE_NAME)
+        id = intent.getLongExtra(EXTRA_MOVIE_ID, 0)
 
         showMovieDetails()
+        onClickFavorite(id)
         onClickDownloadButton()
         observeWorkResultInfo()
     }
@@ -44,6 +46,28 @@ class MovieDetailActivity : AppCompatActivity() {
                 dealWithResultFailed()
             }
         }
+    }
+
+    private fun onClickFavorite(id: Long) {
+        detailBinding.btnFavorite.setOnClickListener {
+            movieDetailsViewModel.updateFavorite(id, 1)
+            showFavoritedHeart()
+        }
+
+        detailBinding.btnFavoriteFilled.setOnClickListener {
+            movieDetailsViewModel.updateFavorite(id, 0)
+            hideFavoritedHeart()
+        }
+    }
+
+    private fun showFavoritedHeart() {
+        detailBinding.btnFavorite.visibility = View.INVISIBLE
+        detailBinding.btnFavoriteFilled.visibility = View.VISIBLE
+    }
+
+    private fun hideFavoritedHeart() {
+        detailBinding.btnFavorite.visibility = View.VISIBLE
+        detailBinding.btnFavoriteFilled.visibility = View.INVISIBLE
     }
 
     private fun addRotationInfinite(imageRotation: ImageView) {
@@ -111,10 +135,16 @@ class MovieDetailActivity : AppCompatActivity() {
     }
 
     private fun showMovieDetails() {
-        detailBinding.titleDescriptionMovie.text = intent.getStringExtra(EXTRA_MOVIE_NAME)
-        detailBinding.descriptionMovie.text = intent.getStringExtra(EXTRA_MOVIE_DESCRIPTION)
-        intent.getStringExtra(EXTRA_MOVIE_IMAGE)?.let {
-            loadImage(it)
+        movieDetailsViewModel.getMovie(id)
+
+        movieDetailsViewModel.movieData.observe(this) {
+            detailBinding.titleDescriptionMovie.text = it.title
+            detailBinding.descriptionMovie.text = it.description
+            when (it.favorite) {
+                0 -> hideFavoritedHeart()
+                1 -> showFavoritedHeart()
+            }
+            loadImage(it.image)
         }
     }
 
@@ -126,9 +156,8 @@ class MovieDetailActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val EXTRA_MOVIE_IMAGE = "EXTRA_MOVIE_IMAGE"
+        const val EXTRA_MOVIE_ID = "EXTRA_MOVIE_ID"
         const val EXTRA_MOVIE_NAME = "EXTRA_MOVIE_NAME"
-        const val EXTRA_MOVIE_DESCRIPTION = "EXTRA_MOVIE_DESCRIPTION"
         const val DOWNLOAD_WORKKER = "WORKER"
     }
 }

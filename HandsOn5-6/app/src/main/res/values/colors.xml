@@ -10,4 +10,7 @@
 
     <color name="red">#ED5186</color>
     <color name="orange">#ED6851</color>
+    <color name="blue">#518AED</color>
+
+    <color name="end_color">#5b92e5</color>
 </resources>

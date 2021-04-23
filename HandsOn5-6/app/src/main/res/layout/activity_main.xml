@@ -42,38 +42,50 @@ xmlns:tools="http://schemas.android.com/tools">
         android:backgroundTint="@color/teal_200"
         android:text="@string/load_movies"
         android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@id/btnClearMovies"
+        app:layout_constraintEnd_toStartOf="@+id/btnLoadFavorites"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/guidelineMarginStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnLoadFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/btn_margin_top"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/blue"
+        android:text="@string/load_favorites"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMarginEnd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnLoadMovies"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnClearMovies"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/btn_margin_top"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/red"
         android:text="@string/clear_movies"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@id/btnLoadMovies"
-        app:layout_constraintEnd_toStartOf="@id/btnViewPager"
-        app:layout_constraintStart_toEndOf="@id/btnLoadMovies"
-        app:layout_constraintTop_toTopOf="@id/btnLoadMovies"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toEndOf="@id/btnLoadMovies"
+        app:layout_constraintStart_toStartOf="@id/btnLoadMovies"
+        app:layout_constraintTop_toBottomOf="@id/btnLoadMovies" />
 
     <Button
         android:id="@+id/btnViewPager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/btn_margin_top"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/orange"
         android:text="@string/view_pager"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@id/btnClearMovies"
-        app:layout_constraintEnd_toEndOf="@id/guidelineMarginEnd"
-        app:layout_constraintStart_toEndOf="@id/btnClearMovies"
-        app:layout_constraintTop_toTopOf="@id/btnClearMovies"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toEndOf="@id/btnLoadFavorites"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@id/btnLoadFavorites"
+        app:layout_constraintTop_toBottomOf="@id/btnLoadFavorites" />
 
     <ProgressBar
         android:id="@+id/loading"
@@ -85,16 +97,23 @@ xmlns:tools="http://schemas.android.com/tools">
         app:layout_constraintTop_toBottomOf="@id/btnClearMovies"
         tools:visibility="visible" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvMoviesList"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guidelineMarginEnd"
         app:layout_constraintStart_toStartOf="@id/guidelineMarginStart"
-        app:layout_constraintTop_toBottomOf="@+id/loading"
-        tools:listitem="@layout/item_movie" />
+        app:layout_constraintTop_toBottomOf="@id/loading">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMoviesList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="54dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_movie" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

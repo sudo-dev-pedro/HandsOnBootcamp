@@ -1,17 +1,19 @@
 package br.com.handson5.ui.moviedetails
 
 import android.content.Context
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import androidx.work.ExistingWorkPolicy
 import androidx.work.OneTimeWorkRequest
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
+import br.com.handson5.data.Movie
+import br.com.handson5.database.repository.MovieEntityRepository
 import br.com.handson5.workers.DownloadWorker
+import kotlinx.coroutines.launch
 
-class MovieDetailsViewModel : ViewModel() {
+class MovieDetailsViewModel(
+    private val moviesEntityRepository: MovieEntityRepository
+) : ViewModel() {
     // Não é bom ser global nesse caso, pela questão do escopo.
 //    private lateinit var workManager: WorkManager
 //    private lateinit var workRequest: OneTimeWorkRequest
@@ -19,6 +21,10 @@ class MovieDetailsViewModel : ViewModel() {
     private val _workResultInfo = MutableLiveData<Boolean>()
     val workResultInfo: LiveData<Boolean>
         get() = _workResultInfo
+
+    private val _movieData = MutableLiveData<Movie>()
+    val movieData: LiveData<Movie>
+        get() = _movieData
 
     fun startDownloadWorker(
         context: Context,
@@ -50,6 +56,18 @@ class MovieDetailsViewModel : ViewModel() {
             } else if (it?.state == WorkInfo.State.FAILED) {
                 _workResultInfo.postValue(false)
             }
+        }
+    }
+
+    fun updateFavorite(id: Long, value: Int) {
+        viewModelScope.launch {
+            moviesEntityRepository.updateFavorite(id, value)
+        }
+    }
+
+    fun getMovie(id: Long) {
+        viewModelScope.launch {
+            _movieData.postValue(moviesEntityRepository.getMovie(id))
         }
     }
 

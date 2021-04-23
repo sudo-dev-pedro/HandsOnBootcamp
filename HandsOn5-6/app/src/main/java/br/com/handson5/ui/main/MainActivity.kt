@@ -10,9 +10,7 @@ import br.com.handson5.adapter.MovieAdapter
 import br.com.handson5.data.Movie
 import br.com.handson5.databinding.ActivityMainBinding
 import br.com.handson5.ui.moviedetails.MovieDetailActivity
-import br.com.handson5.ui.moviedetails.MovieDetailActivity.Companion.EXTRA_MOVIE_DESCRIPTION
-import br.com.handson5.ui.moviedetails.MovieDetailActivity.Companion.EXTRA_MOVIE_IMAGE
-import br.com.handson5.ui.moviedetails.MovieDetailActivity.Companion.EXTRA_MOVIE_NAME
+import br.com.handson5.ui.moviedetails.MovieDetailActivity.Companion.EXTRA_MOVIE_ID
 import br.com.handson5.ui.slider.SliderActivity
 import br.com.handson5.ui.slider.SliderActivity.Companion.EXTRA_MOVIES
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -41,6 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         onClickLoadButton()
         onClickEraseButton()
+        onClickLoadFavorites()
         onClickViewPagerButton()
     }
 
@@ -58,7 +57,11 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
         }
 
-        mainViewModel.moviesLiveData.observe(this) {
+        mainViewModel.moviesList.observe(this) {
+            movieAdapter.updateMovieList(it)
+        }
+
+        mainViewModel.favoriteMovies.observe(this) {
             movieAdapter.updateMovieList(it)
         }
     }
@@ -66,7 +69,14 @@ class MainActivity : AppCompatActivity() {
     private fun onClickLoadButton() {
         mainBinding.btnLoadMovies.setOnClickListener {
             mainViewModel.setIsLoading(true)
-            mainViewModel.searchMovies()
+            mainViewModel.getMovies()
+        }
+    }
+
+    private fun onClickLoadFavorites() {
+        mainBinding.btnLoadFavorites.setOnClickListener {
+            mainViewModel.setIsLoading(true)
+            mainViewModel.getFavoriteMovies()
         }
     }
 
@@ -86,9 +96,10 @@ class MainActivity : AppCompatActivity() {
     private fun navigateToDetails(movie: Movie) {
         val intent = Intent(this, MovieDetailActivity::class.java)
 
-        intent.putExtra(EXTRA_MOVIE_IMAGE, movie.image)
-        intent.putExtra(EXTRA_MOVIE_NAME, movie.title)
-        intent.putExtra(EXTRA_MOVIE_DESCRIPTION, movie.description)
+//        intent.putExtra(EXTRA_MOVIE_IMAGE, movie.image)
+//        intent.putExtra(EXTRA_MOVIE_NAME, movie.title)
+//        intent.putExtra(EXTRA_MOVIE_DESCRIPTION, movie.description)
+        intent.putExtra(EXTRA_MOVIE_ID, movie.id)
 
         startActivity(intent)
     }

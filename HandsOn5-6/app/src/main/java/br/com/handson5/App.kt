@@ -2,17 +2,21 @@ package br.com.handson5
 
 import android.app.Application
 import androidx.room.Room
-import br.com.handson5.database.AppDatabase
+import br.com.handson5.database.DatabaseManager
 import br.com.handson5.database.DatabaseConstants.DATABASE_NAME
 import br.com.handson5.di.appModule
 import br.com.handson5.di.repositoryModule
+import br.com.handson5.di.viewModelsModule
+import net.sqlcipher.database.SQLiteDatabase.getBytes
+import net.sqlcipher.database.SupportFactory
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
 class App : Application() {
 
     companion object {
-        lateinit var database: AppDatabase
+        const val USER_HASH_CODE = "USER_HASH_CODE"
+        lateinit var databaseManager: DatabaseManager
     }
 
     override fun onCreate() {
@@ -23,16 +27,21 @@ class App : Application() {
             modules(
                 listOf(
                     appModule,
-                    repositoryModule
+                    repositoryModule,
+                    viewModelsModule
                 )
             )
         }
 
-        database = Room.databaseBuilder(
+        val builder = Room.databaseBuilder(
             this,
-            AppDatabase::
-            class.java,
+            DatabaseManager::class.java,
             DATABASE_NAME
-        ).build()
+        )
+
+        val factory = SupportFactory(getBytes("PassPhrase".toCharArray()))
+        builder.openHelperFactory(factory)
+        databaseManager = builder.build()
+
     }
 }

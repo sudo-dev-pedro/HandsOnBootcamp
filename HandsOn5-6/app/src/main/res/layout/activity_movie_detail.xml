@@ -60,6 +60,35 @@
         app:layout_constraintTop_toBottomOf="@+id/titleDescriptionMovie"
         tools:text="Movie Description" />
 
+    <ImageButton
+        android:id="@+id/btnFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/white"
+        android:contentDescription="@string/heart_filled"
+        android:padding="16dp"
+        android:src="@drawable/ic_heart_unfill"
+        android:textSize="@dimen/description_movie"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMarginEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMarginStart"
+        app:layout_constraintTop_toBottomOf="@id/descriptionMovie" />
+
+    <ImageButton
+        android:id="@+id/btnFavoriteFilled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/white"
+        android:contentDescription="@string/heart_filled"
+        android:padding="16dp"
+        android:src="@drawable/ic_heart_filled"
+        android:textSize="@dimen/description_movie"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMarginEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMarginStart"
+        app:layout_constraintTop_toBottomOf="@id/descriptionMovie" />
+
     <Button
         android:id="@+id/btnDowload"
         android:layout_width="wrap_content"
@@ -91,8 +120,8 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/ic_done"
-        android:visibility="gone"
         android:backgroundTint="@color/teal_200"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

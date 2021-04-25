@@ -43,6 +43,7 @@ class AnimesAdapter : RecyclerView.Adapter<AnimesViewHolder>() {
 
     fun updateAnimesList(newAnimesList: List<Anime>) {
         animesList = newAnimesList
+        notifyDataSetChanged()
     }
 
     fun onClickItem(anime: (Anime) -> Unit) {

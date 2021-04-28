@@ -2,13 +2,13 @@ package br.com.raywenderlich.threads
 
 class SimpleThread : Thread() {
     override fun run() {
-        println("${Thread.currentThread()} está ativa.")
+//        println("${Thread.currentThread()} está ativa.")
     }
 }
 
 class SimpleRunnable : Runnable {
     override fun run() {
-        println("${Thread.currentThread()} está ativa (Runnable).")
+//        println("${Thread.currentThread()} está ativa (Runnable).")
     }
 }
 
@@ -22,7 +22,7 @@ fun main() {
 
     println("Essa é a Thread principal! (Main)")
 
-    simpleThread.start()
-    simpleRunnable.start()
+//    simpleThread.start()
+//    simpleRunnable.start()
     newThread.start()
 }

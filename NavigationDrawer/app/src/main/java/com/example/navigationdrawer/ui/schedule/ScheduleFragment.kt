@@ -1,4 +1,4 @@
-package com.example.navigationdrawer.ui.home
+package com.example.navigationdrawer.ui.schedule
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,22 +10,23 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.navigationdrawer.R
 
-class HomeFragment : Fragment() {
+class ScheduleFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var scheduleViewModel: ScheduleViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        scheduleViewModel =
+            ViewModelProvider(this).get(ScheduleViewModel::class.java)
 
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
+        val root = inflater.inflate(R.layout.fragment_schedule, container, false)
+        val textView: TextView = root.findViewById(R.id.text_schedule)
+        
 
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+        scheduleViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
 

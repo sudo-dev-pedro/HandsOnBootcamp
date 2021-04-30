@@ -10,4 +10,10 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about">Sobre</string>
+    <string name="my_cards">Meus Cartões</string>
+    <string name="statement">Extrato</string>
+    <string name="schedule">Agendar Pagamento</string>
 </resources>

@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.microblink.blinkcard.entities.recognizers.Recognizer
 import com.microblink.blinkcard.entities.recognizers.RecognizerBundle
@@ -23,10 +24,10 @@ class MainActivity : AppCompatActivity() {
         recognizer = BlinkCardRecognizer()
         recognizerBundle = RecognizerBundle(recognizer)
 
-        startScanning()
+//        startScanning()
     }
 
-    private fun startScanning() {
+    fun startScanning(view: View) {
         val settings = BlinkCardUISettings(recognizerBundle)
 
         ActivityRunner.startActivityForResult(this, REQUEST_CODE, settings)

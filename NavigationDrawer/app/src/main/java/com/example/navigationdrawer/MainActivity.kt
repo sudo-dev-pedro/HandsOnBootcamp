@@ -1,9 +1,6 @@
 package com.example.navigationdrawer
 
 import android.os.Bundle
-import android.view.Menu
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -39,12 +36,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(mainBinding.root)
 
         setSupportActionBar(toolbar)
+
         val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_home, R.id.nav_about,
+                R.id.nav_my_cards, R.id.nav_statement, R.id.nav_schedule
             ), drawerLayout
         )
         /**

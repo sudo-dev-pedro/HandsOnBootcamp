@@ -1,13 +1,13 @@
-package com.example.navigationdrawer.ui.home
+package com.example.navigationdrawer.ui.about
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class AboutViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "Essa é a home"
+        value = "Sobre"
     }
     val text: LiveData<String> = _text
 }

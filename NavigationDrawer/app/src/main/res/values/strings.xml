@@ -16,4 +16,5 @@
     <string name="my_cards">Meus Cartões</string>
     <string name="statement">Extrato</string>
     <string name="schedule">Agendar Pagamento</string>
+    <string name="credit_card_content_description">Cartão de Credito</string>
 </resources>

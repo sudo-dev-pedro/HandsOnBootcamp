@@ -16,6 +16,7 @@ class SplashActivity : AppCompatActivity() {
     private lateinit var splashBinding: ActivitySplashBinding
     private lateinit var intentLogin: Intent
     private val mainViewModel: MainViewModel by viewModel()
+    private lateinit var job: CoroutineScope
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,16 +24,24 @@ class SplashActivity : AppCompatActivity() {
         splashBinding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(splashBinding.root)
 
+        job = CoroutineScope(Dispatchers.Main)
+
         intentLogin = Intent(this, LoginActivity::class.java)
             .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK)
 
-        GlobalScope.launch {
+        job.launch {
             mainViewModel.searchMovies()
-            delay(2000)
+            delay(3000)
             withContext(Dispatchers.Main) {
                 startActivity(intentLogin)
                 finish()
             }
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        job.cancel()
+        finish()
     }
 }

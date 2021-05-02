@@ -35,11 +35,22 @@ class MainActivity : AppCompatActivity() {
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
 
+        // Setando a toolbar para ser a barra de ações (ActionBar)
         setSupportActionBar(toolbar)
 
+        /**
+         * Aqui abaixo há a definição da Fragment que será o host das novas fragments
+         * conforme a navegação ocorre.
+         */
         val navController = findNavController(R.id.nav_host_fragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
+        /**
+         * Logo abaixo há a passsagem das ID's que serão as fragments de destino (top lvel destination).
+         * Nessas fragments não há a apresentação do Up Button, que nesse caso é o botão de voltar
+         * para a mãe na hierarquia.
+         *
+         * Também é passado o drawer layout para que ele seja togglado logo mais e permita abrir o layout.
+         */
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home, R.id.nav_about,
@@ -63,9 +74,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-    Quando eu clicar para voltar eu preciso fechar o meu DrawerLayout
-    retornado ele para a posição de Start (posição inicial).
-    Caso ele já esteja fechado, o back segue o seu comportamento natural.
+     * Quando eu clicar para voltar eu preciso fechar o meu DrawerLayout
+     * retornado ele para a posição de Start (posição inicial).
+     * Caso ele já esteja fechado, o back segue o seu comportamento natural.
      */
     override fun onBackPressed() {
         if (mainBinding.drawerLayout.isDrawerOpen(GravityCompat.START)) {

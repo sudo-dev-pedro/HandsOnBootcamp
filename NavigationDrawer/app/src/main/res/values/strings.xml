@@ -17,4 +17,5 @@
     <string name="statement">Extrato</string>
     <string name="schedule">Agendar Pagamento</string>
     <string name="credit_card_content_description">Cartão de Credito</string>
+    <string name="phone_hint">(XX) XX 9XXX-XXXX</string>
 </resources>

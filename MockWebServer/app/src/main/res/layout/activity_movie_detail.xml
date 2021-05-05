@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.moviedetails.MovieDetailActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMarginStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/guidelines_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMarginEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/guidelines_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMarginTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="32dp" />
+
+    <ImageView
+        android:id="@+id/imageDescriptionMovie"
+        android:layout_width="92dp"
+        android:layout_height="128dp"
+        android:contentDescription="@string/movie_image"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMarginEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMarginStart"
+        app:layout_constraintTop_toTopOf="@id/guidelineMarginTop"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/titleDescriptionMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="@dimen/title_movie"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMarginEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMarginStart"
+        app:layout_constraintTop_toBottomOf="@id/imageDescriptionMovie"
+        tools:text="Movie Title" />
+
+    <TextView
+        android:id="@+id/descriptionMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:textSize="@dimen/description_movie"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMarginEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMarginStart"
+        app:layout_constraintTop_toBottomOf="@+id/titleDescriptionMovie"
+        tools:text="Movie Description" />
+
+    <ImageButton
+        android:id="@+id/btnFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/white"
+        android:contentDescription="@string/heart_filled"
+        android:padding="16dp"
+        android:src="@drawable/ic_heart_unfill"
+        android:textSize="@dimen/description_movie"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMarginEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMarginStart"
+        app:layout_constraintTop_toBottomOf="@id/descriptionMovie" />
+
+    <ImageButton
+        android:id="@+id/btnFavoriteFilled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/white"
+        android:contentDescription="@string/heart_filled"
+        android:padding="16dp"
+        android:src="@drawable/ic_heart_filled"
+        android:textSize="@dimen/description_movie"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMarginEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMarginStart"
+        app:layout_constraintTop_toBottomOf="@id/descriptionMovie" />
+
+    <Button
+        android:id="@+id/btnDowload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/teal_200"
+        android:text="@string/download"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descriptionMovie"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <ImageView
+        android:id="@+id/imageRotation"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_replay"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnDowload"
+        app:layout_constraintVertical_bias="0.3"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/imageDownloadComplete"
+
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/ic_done"
+        android:backgroundTint="@color/teal_200"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnDowload"
+        app:layout_constraintVertical_bias="0.3"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

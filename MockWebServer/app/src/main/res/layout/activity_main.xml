@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools">
+
+
+<data>
+  <variable
+      name="mainViewModel"
+      type="br.com.handson5.ui.main.MainViewModel" />
+</data>
+-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context=".ui.main.MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMarginStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/guidelines_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMarginEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/guidelines_margin" />
+
+    <Button
+        android:id="@+id/btnLoadMovies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/btn_margin_top"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/teal_200"
+        android:text="@string/load_movies"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnLoadFavorites"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/guidelineMarginStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnLoadFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/btn_margin_top"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/blue"
+        android:text="@string/load_favorites"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMarginEnd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnLoadMovies"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnClearMovies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/red"
+        android:text="@string/clear_movies"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/btnLoadMovies"
+        app:layout_constraintStart_toStartOf="@id/btnLoadMovies"
+        app:layout_constraintTop_toBottomOf="@id/btnLoadMovies" />
+
+    <Button
+        android:id="@+id/btnViewPager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/orange"
+        android:text="@string/view_pager"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/btnLoadFavorites"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@id/btnLoadFavorites"
+        app:layout_constraintTop_toBottomOf="@id/btnLoadFavorites" />
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/progress_bar_margin_top"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/guidelineMarginStart"
+        app:layout_constraintTop_toBottomOf="@id/btnClearMovies"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMarginEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMarginStart"
+        app:layout_constraintTop_toBottomOf="@id/loading">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMoviesList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="54dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_movie" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

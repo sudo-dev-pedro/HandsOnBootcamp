@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.slider.MoviesFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMarginStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/guidelines_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMarginEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/guidelines_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMarginTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="32dp" />
+
+    <ImageView
+        android:id="@+id/imageSliderMovie"
+        android:layout_width="92dp"
+        android:layout_height="128dp"
+        android:contentDescription="@string/movie_image"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMarginEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMarginStart"
+        app:layout_constraintTop_toTopOf="@id/guidelineMarginTop"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/txtSliderTitleMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="@dimen/title_movie"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMarginEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMarginStart"
+        app:layout_constraintTop_toBottomOf="@id/imageSliderMovie"
+        tools:text="Movie Title" />
+
+    <TextView
+        android:id="@+id/txtSliderDescriptionMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:textSize="@dimen/description_movie"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMarginEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMarginStart"
+        app:layout_constraintTop_toBottomOf="@+id/txtSliderTitleMovie"
+        tools:text="Movie Description" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

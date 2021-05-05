@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">HandsOn5</string>
+
+    <string name="load_movies">Load Movies</string>
+    <string name="clear_movies">Clear Movies</string>
+
+    <string name="movie_image">Movie Image</string>
+    <string name="view_pager">View Pager</string>
+    <string name="download">Download!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="load_favorites">Load Favorites</string>
+    <string name="heart_filled">Heart Filled</string>
+    <string name="clapeboard">Clapeboard</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+</resources>
